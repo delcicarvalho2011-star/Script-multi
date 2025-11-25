@@ -1,0 +1,16 @@
+local part = script.Parent
+local multiplicador = 100 -- multiplica por 100x
+
+part.Touched:Connect(function(hit)
+    local player = game.Players:GetPlayerFromCharacter(hit.Parent)
+    if player then
+        local leaderstats = player:FindFirstChild("leaderstats")
+        if leaderstats then
+            local coins = leaderstats:FindFirstChild("Coins")
+            if coins and coins.Value > 0 then
+                coins.Value = coins.Value * multiplicador
+                print(player.Name .. " teve o dinheiro multiplicado para " .. coins.Value)
+            end
+        end
+    end
+end)

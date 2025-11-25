@@ -1,2 +1,0 @@
-# Script-multi
-Vital cheats
